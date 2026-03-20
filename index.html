@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Martha Taukuheke</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google Font (Stronger Tech Feel) -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-nav">
+    <div class="container">
+
+        <a class="navbar-brand logo" href="#">
+            MTN<span class="big-dot">.</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav gap-lg-4 align-items-lg-center nav-adjust">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#booking">Project Booking</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+    <div class="overlay"></div>
+
+    <div class="container hero-content">
+
+        <h1 class="hero-title">
+            <span class="small-name">Software Engineer</span>
+            <span class="big-name">Martha Taukuheke</span>
+        </h1>
+
+        <p class="subtitle">
+            Building secure, scalable systems with precision and confidence.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#previousWork" class="btn hero-btn">View Projects</a>
+            <a href="#booking" class="btn hero-btn-outline">Work With Me</a>
+        </div>
+
+    </div>
+
+    <!-- SOCIAL ICONS -->
+    <div class="social-icons">
+        <a href="#"><i class="bi bi-github"></i></a>
+        <a href="#"><i class="bi bi-linkedin"></i></a>
+        <a href="#"><i class="bi bi-twitter-x"></i></a>
+    </div>
+
+</section>
+
+<!--================= ABOUT SECTION ================= -->
+
+<section class="about-section" id="about">
+
+    <div class="container">
+        <div class="row align-items-center min-vh-100 g-0">
+
+            <!-- LEFT CONTENT -->
+            <div class="col-lg-6 about-content">
+
+                <p class="section-tag">ABOUT ME</p>
+
+                <h2 class="about-title">
+                    Building With Purpose.
+                </h2>
+
+                <p class="about-text">
+                    I am a Software Developer and Technical Educator passionate about 
+                    building scalable, secure and meaningful digital solutions. 
+                    My focus is clean architecture, strong fundamentals and intentional design.
+                </p>
+
+                <p class="about-text">
+                    I believe technology should be structured, powerful and human-centered.
+                </p>
+
+                <!-- SERVICES -->
+                <div class="about-services">
+                    <h5 class="about-subtitle">What I Build</h5>
+
+                    <div class="services-grid">
+                        <div class="service-card">Websites</div>
+                        <div class="service-card">Systems Development</div>
+                        <div class="service-card">Mobile Applications</div>
+                    </div>
+                </div>
+
+                <!-- SKILLS -->
+                <div class="about-skills">
+                    <h5 class="about-subtitle">Tech Stack</h5>
+
+                    <div class="skills-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>Python</span>
+                        <span>Java</span>
+                        <span>C#</span>
+                        <span>Django</span>
+                        <span>ASP.NET</span>
+                        <span>React</span>
+                        <span>MySQL</span>
+                        <span>Oracle</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- RIGHT IMAGE -->
+            <div class="col-lg-6 about-image">
+                <img src="img/Martha-NoBG.png" alt="Martha">
+            </div>
+
+        </div>
+    </div>
+
+</section>
+<!-- ================= PROJECTS ================= -->
+<!-- ================= PROJECTS ================= -->
+
+<section class="container text-center" id="previousWork">
+    <p class="section-tag">PREVIOUS WORK</p>
+    <h2 class="section-title mb-5">Selected Projects</h2>
+
+    <div class="row g-4">
+
+        <!-- PROJECT 1 -->
+        <div class="col-md-4">
+            <div class="project-card-showcase">
+                <h5>Corporate Website</h5>
+                <p>Professional organization platform with structured content.</p>
+
+                <button class="view-project-btn" 
+                        data-images="img/cpp.png"
+                        data-link="https://elements.envato.com/arges-corporate-business-html5-template-8RKHWQ">
+                    View Project
+                </button>
+            </div>
+        </div>
+
+        <!-- PROJECT 2 -->
+        <div class="col-md-4">
+            <div class="project-card-showcase">
+                <h5>Client Dashboard</h5>
+                <p>Secure login, admin control panel and database system.</p>
+
+                <button class="view-project-btn"
+                        data-images="img/d-p.png"
+                        data-link="https://elements.envato.com/arges-corporate-business-html5-template-8RKHWQ">
+                    View Project
+                </button>
+            </div>
+        </div>
+
+        <!-- PROJECT 3 -->
+        <div class="col-md-4">
+            <div class="project-card-showcase">
+                <h5>eCommerce Platform</h5>
+                <p>Online store with accounts and payment integration.</p>
+
+                <button class="view-project-btn"
+                        data-images="img/m-p.png"
+                        data-link="https://elements.envato.com/arges-corporate-business-html5-template-8RKHWQ">
+                    View Project
+                </button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- PROJECT MODAL -->
+<div id="projectModal" class="project-modal">
+    <div class="project-modal-box">
+        <span class="close-project-modal">&times;</span>
+
+        <div id="projectImages"></div>
+
+        <a id="projectLink" target="_blank" class="project-link-btn">
+            Visit Project →
+        </a>
+    </div>
+</div>
+
+<!-- ================= BOOKING ================= -->
+
+
+<section class="container" id="booking">
+
+<div class="text-center mb-5">
+    <p class="section-tag">WORK WITH ME</p>
+    <h2 class="section-title">Build Your Project</h2>
+    <p class="section-subtitle">
+        Select your project type and features to see your estimated investment instantly.
+    </p>
+</div>
+
+<div class="row booking-divider" >
+
+
+<div class="col-lg-7">
+
+<h5>Choose Project Type</h5>
+<div class="project-card selection-card">
+
+  <div class="card-header">
+    <label class="card-select">
+      <input type="radio" name="base" value="6000">
+      <span class="card-title">Business Website</span>
+    </label>
+
+    <div class="card-right">
+      <span class="price">N$ 6,000</span>
+      </div>
+    
+  </div>
+
+  <div class="option-desc">
+    Ideal for companies and organizations that need a strong online presence.
+    Includes multiple pages, contact forms and structured content presentation.
+  </div>
+
+  <div class="accordion-row">
+       <span class="accordion-icon">
+         <i class="bi bi-chevron-down"></i>
+       </span>
+    </div>
+
+</div>
+
+
+<div class="project-card selection-card">
+
+  <div class="card-header">
+    <label class="card-select">
+      <input type="radio" name="base" value="12000">
+      <span class="card-title">Interactive Platform</span>
+    </label>
+
+    <div class="card-right">
+      <span class="price">N$ 12,000</span>
+    </div>
+
+  </div>
+
+  <div class="option-desc">
+    Includes user login, account setup, secure database, admin panel
+    and content management tools.
+  </div>
+
+  <div class="accordion-row">
+       <span class="accordion-icon">
+         <i class="bi bi-chevron-down"></i>
+       </span>
+    </div>
+
+</div>
+
+
+<div class="project-card selection-card">
+
+  <div class="card-header">
+    <label class="card-select">
+      <input type="radio" name="base" value="25000">
+      <span class="card-title">Advanced System</span>
+    </label>
+
+    <div class="card-right">
+      <span class="price">N$ 25,000</span>
+    </div>
+    
+  </div>
+
+  <div class="option-desc">
+    Full system with user accounts, dashboards, approvals,
+    workflows, validation logic and scalable architecture.
+  </div>
+
+  <div class="accordion-row">
+       <span class="accordion-icon">
+         <i class="bi bi-chevron-down"></i>
+       </span>
+    </div>
+
+</div>
+
+<h5 class="mt-4">Enhancement Options</h5>
+
+<label class="feature-item selection-card">
+    <input type="checkbox" value="2000">
+    User Login & Account Setup (+ N$ 2,000)
+</label>
+
+<label class="feature-item selection-card">
+    <input type="checkbox" value="5000">
+    Online Store / eCommerce (+ N$ 5,000)
+</label>
+
+<label class="feature-item selection-card">
+    <input type="checkbox" value="4000">
+    Admin Dashboard (+ N$ 4,000)
+</label>
+
+<label class="feature-item selection-card">
+    <input type="checkbox" value="3500">
+    Approval & Workflow System (+ N$ 3,500)
+</label>
+
+<h5 class="mt-4">Choose Visual Style</h5>
+
+<label class="theme-item selection-card">
+    <input type="radio" name="theme" value="professional-theme" checked>
+    Professional
+</label>
+
+<label class="theme-item selection-card">
+    <input type="radio" name="theme" value="glassy-theme">
+    Glass Overlay
+</label>
+
+<label class="theme-item selection-card">
+    <input type="radio" name="theme" value="matte-theme">
+    Matte
+</label>
+
+<label class="theme-item selection-card">
+    <input type="radio" name="theme" value="elegant-theme">
+    Elegant
+</label>
+
+</div>
+
+<!-- RIGHT SIDE -->
+<div class="col-lg-5">
+
+<div id="previewBox" class="preview-box professional-theme">
+
+  <div class="preview-header">
+      <div class="mock-nav"></div>
+  </div>
+
+  <div class="preview-body">
+
+      <div id="mockLayout" class="mock-layout">
+          <div class="mock-sidebar"></div>
+          <div class="mock-main">
+              <div class="mock-card"></div>
+              <div class="mock-card"></div>
+          </div>
+      </div>
+
+      <div class="preview-features" id="previewFeatures">
+          <p>Selected features will appear here</p>
+      </div>
+
+  </div>
+
+</div>
+
+<div class="summary-card">
+    <h5>Project Summary</h5>
+
+    <div class="summary-line">
+        <span>Base Project</span>
+        <span id="basePrice">N$ 0</span>
+    </div>
+
+    <div class="summary-line">
+        <span>Enhancements</span>
+        <span id="featuresPrice">N$ 0</span>
+    </div>
+
+    <hr>
+
+    <div class="summary-total">
+        <span>Total Investment</span>
+        <span id="totalPrice">N$ 0</span>
+    </div>
+    <button id="consultationBtn" class="book-btn mt-3">
+      Request Consultation
+    </button>
+</div>
+
+</div>
+</div>
+
+<!-- ================= CONSULTATION MODAL ================= -->
+
+<div id="consultationModal" class="consultation-modal">
+
+  <div class="consultation-box">
+
+    <span class="close-modal">&times;</span>
+
+    <h3>Project Consultation</h3>
+    <p class="consultation-sub">
+      Your project details have been added automatically. 
+      Please complete your contact information.
+    </p>
+
+   <form id="consultationForm">
+
+<h3>Your Project Summary</h3>
+
+<div class="consult-summary">
+<p><strong>Project:</strong> <span id="consultProjectDisplay"></span></p>
+<p><strong>Theme:</strong> <span id="consultThemeDisplay"></span></p>
+<p><strong>Features:</strong> <span id="consultFeaturesDisplay"></span></p>
+<p><strong>Total:</strong> <span id="consultTotalDisplay"></span></p>
+</div>
+
+<!-- Hidden inputs for EmailJS -->
+<input type="hidden" id="consultProject" name="consult_project">
+<input type="hidden" id="consultTheme" name="consult_theme">
+<input type="hidden" id="consultFeatures" name="consult_features">
+<input type="hidden" id="consultTotal" name="consult_total">
+
+<hr>
+
+<input type="text" name="consult_name" placeholder="Your Name" required>
+<input type="email" name="consult_email" placeholder="Your Email" required>
+<textarea name="consult_message" placeholder="Additional details"></textarea>
+
+<button class="book-btn" type="submit">Send Consultation Request</button>
+
+
+      <div class="form-feedback-box" id="consultationFeedback">
+  <span id="consultationFeedbackfor"></span>
+</div>
+
+    </form>
+
+  </div>
+
+</div>
+
+
+</section>
+
+
+
+<!-------------------==========CONTACT SECTION======================-------------------->
+
+<section class="container contact-section" id="contact">
+
+<div class="text-center mb-5">
+  <p class="section-tag">CONTACT</p>
+  <h2 class="section-title">Let's Talk</h2>
+  <p class="section-subtitle">
+    Have a question or idea? Send a message and I'll get back to you.
+  </p>
+</div>
+
+<div class="row justify-content-center">
+
+<div class="col-lg-6">
+
+<form class="contact-form" id="contactForm">
+
+<input type="text" placeholder="Your Name" name="user_name" required>
+
+<input type="email" placeholder="Email Address" name="user_email" required>
+
+<input type="text" placeholder="Subject" name="subject">
+
+<textarea placeholder="Write your message here..." name="message" required></textarea>
+
+<button class="book-btn">Send Message</button>
+
+<div class="form-feedback-box" id="contactFeedback">
+  <span id="contactFeedbackfor"></span>
+</div>
+
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+
+<footer class="site-footer">
+
+  <div class="container">
+
+    <div class="row">
+
+      <!-- LEFT: BRAND -->
+      <div class="col-lg-4 footer-brand">
+        <h4>Martha Taukuheke</h4>
+        <p>
+          Software Engineer building secure, scalable and 
+          human-centered digital solutions.
+        </p>
+      </div>
+
+      <!-- CENTER: NAV LINKS -->
+      <div class="col-lg-4 footer-links">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#booking">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- RIGHT: CONTACT / SOCIAL -->
+      <div class="col-lg-4 footer-contact">
+        <h5>Connect</h5>
+
+        <p>Email: marthataukuheke@gmail.com</p>
+
+        <div class="footer-social">
+          <a href="#"><i class="bi bi-github"></i></a>
+          <a href="#"><i class="bi bi-linkedin"></i></a>
+          <a href="#"><i class="bi bi-twitter-x"></i></a>
+        </div>
+
+      </div>
+
+    </div>
+
+    <hr>
+    <div class="footer-bottom text-center">
+    <p>
+  © 2026 Martha Taukuheke<span class="footer-dot">.</span> 
+  <span class="footer-accent">All rights reserved.</span>
+</p>
+</div>
+
+  </div>
+
+</footer>
+</html>
