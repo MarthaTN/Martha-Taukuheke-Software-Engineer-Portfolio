@@ -5,7 +5,7 @@ A modern, interactive portfolio website showcasing my work, services, and techni
 ---
 
 ## 🚀 Live Preview
-👉 (Add your GitHub Pages link here after hosting)
+👉 https://marthatn.github.io/Martha-Taukuheke-Software-Engineer-Portfolio/
 
 ---
 
