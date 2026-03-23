@@ -56,6 +56,29 @@ body {
     align-items: center;
 }
 
+
+/* YOUR IMAGE (SOFT OVERLAY) */
+.hero::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 20%;
+
+    width: 90%;
+    height: 90%;
+
+    background: url("img/M2.png") no-repeat bottom right;
+    background-size: contain;
+
+    opacity: 0.2; /* VERY IMPORTANT */
+    filter: grayscale(100%) contrast(110%);
+    
+    pointer-events: none;
+    z-index: 1;
+}
+
+
+
 .overlay {
     position: absolute;
     inset: 0;
@@ -116,17 +139,12 @@ body {
 
 /* ================= BUTTON SYSTEM ================= */
 
-/*.hero-buttons {
-    margin-top: 40px;
-    display: flex;
-    gap: 20px;
-}
 
 /* PRIMARY BUTTON */
 .hero-btn {
     padding: 12px 26px;
     font-size: 13px;
-    background: #00c896;
+    background: transparent;
     border: none;
     border-radius: 4px;
     font-weight: 700;
@@ -134,6 +152,8 @@ body {
     text-transform: uppercase;
     transition: all 0.3s ease;
     opacity: 85%;
+    color: #00c896;
+    box-shadow: 0 12px 30px rgba(0, 200, 150, 0.35);
 }
 
 .hero-btn:hover {
@@ -207,17 +227,15 @@ body {
 
 /* ================= ABOUT SECTION ================= */
 
+
 .about-section {
-    background: linear-gradient(
-        to bottom,
-        #0a0f14 0%,
-        #0d141c 100%
-    );
+    background: linear-gradient(to bottom, #0a0f14, #0d141c);
     position: relative;
-    overflow: hidden;
     color: white;
     border-top: 1px solid rgba(255,255,255,0.05);
     font-family: 'Space Grotesk', sans-serif;
+    padding: 80px 0;
+    overflow: hidden;
 }
 
 /* Noise overlay */
@@ -226,22 +244,31 @@ body {
     position: absolute;
     inset: 0;
     background: url("img/noise.png");
-    opacity: 0.04; 
+    opacity: 0.04;
     pointer-events: none;
     z-index: 1;
 }
 
-/* Ensure content is above overlay */
-.about-content,
-.about-image {
+.about-wrapper {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
     position: relative;
     z-index: 2;
 }
 
-/* Container spacing */
+/* LEFT SIDE */
 .about-content {
-    padding: 80px 5%;
+    flex: 1;
     max-width: 600px;
+}
+
+/* RIGHT SIDE */
+.about-work {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
 
 /* Section Tag */
@@ -254,7 +281,7 @@ body {
     margin-bottom: 12px;
 }
 
-/* Title */
+/* ====Title==== */
 .about-title {
     font-size: 3rem;
     font-weight: 700;
@@ -263,7 +290,7 @@ body {
     line-height: 1.2;
 }
 
-/* Paragraphs */
+/* ====Paragraphs==== */
 .about-text {
     color: #c0c6d0;
     line-height: 1.8;
@@ -271,51 +298,24 @@ body {
     font-size: 1.05rem;
 }
 
-/* ================= IMAGE ================= */
-
-.about-image {
+/* ===Blocks======== */
+.about-block {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 5%;
+    flex-direction: column;
+    gap: 16px;
 }
 
-.about-image img {
-    max-height: 500px;
-    width: auto;
-    opacity: 0.9;
-    filter: grayscale(100%) contrast(110%);
-    transition: all 0.4s ease;
-}
-
-/* Glow effect behind image */
-.about-image::after {
-    content: "";
-    position: absolute;
-    width: 60%;
-    height: 60%;
-    background: radial-gradient(circle, rgba(0,200,150,0.2) 0%, transparent 70%);
-    bottom: 10%;
-    right: 20%;
-    z-index: 1;
-}
-
-/* Hover effect */
-.about-image img:hover {
-    filter: grayscale(0%) contrast(110%);
-    opacity: 1;
-}
-
-/* ================= SUBHEADINGS ================= */
+/* ================= SUBHEADINGS =================*/
 
 .about-subtitle {
     margin-top: 30px;
     margin-bottom: 15px;
     font-size: 1rem;
-    color: #00c896;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
+
+
 
 /* ================= SERVICES ================= */
 
@@ -362,6 +362,19 @@ body {
     color: black;
     transform: translateY(-2px);
 }
+/* Responsive */
+@media (max-width: 992px) {
+    .about-wrapper {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .about-title {
+        font-size: 2.2rem;
+    }
+}
+
+
 
 /* ================= RESPONSIVE ================= */
 
@@ -375,9 +388,6 @@ body {
         font-size: 2.2rem;
     }
 
-    .about-image img {
-        max-height: 400px;
-    }
 }
 
 @media (max-width: 576px) {
@@ -390,7 +400,86 @@ body {
     }
 }
 
-/* ================= PREVIOUS PROJECTS ================= */
+/* ---------------- PREVIOUS PROJECTS-------------- */
+
+/* ================= PROJECT SHOWCASE ================= */
+
+.project-card-showcase {
+    background: #11151c;
+    padding: 25px;
+    border-radius: 12px;
+    transition: 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.project-card-showcase:hover {
+    transform: translateY(-5px);
+    border-color: #00c896;
+}
+
+.p-title{
+    font-size: 1rem;
+    font-weight: 999;
+}
+
+/* VIEW BUTTON */
+.view-project-btn {
+    margin-top: 15px;
+    padding: 0;
+    background: none;
+    border: none;
+    color: #00c896;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.view-project-btn:hover {
+    color: #00e6a8;
+    transform: translateY(-3px);
+}
+
+/* PROJECT MODAL */
+.project-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.project-modal-box {
+    background: #11151c;
+    padding: 20px;
+    border-radius: 12px;
+    width: 600px;
+    max-width: 90%;
+}
+
+#projectImages img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.project-link-btn {
+    display: inline-block;
+    margin-top: 10px;
+    color: #00c896;
+    font-weight: 600;
+}
+
+.close-project-modal {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+/* ================= PROJECT BOOKING ================= */
+
 
 .projects-section {
     position: relative;
@@ -438,6 +527,7 @@ body {
     transform: scale(1.05);
     filter: grayscale(0%) contrast(110%);
 }
+
 
 .project-info {
     position: absolute;
@@ -565,78 +655,6 @@ section {
     max-width: 600px;
     margin: 0 auto;
 }
-
-/* ================= PROJECT SHOWCASE ================= */
-
-.project-card-showcase {
-    background: #11151c;
-    padding: 25px;
-    border-radius: 12px;
-    transition: 0.3s ease;
-    border: 1px solid rgba(255,255,255,0.05);
-}
-
-.project-card-showcase:hover {
-    transform: translateY(-5px);
-    border-color: #00c896;
-}
-
-/* VIEW BUTTON */
-.view-project-btn {
-    margin-top: 15px;
-    padding: 0;
-    background: none;
-    border: none;
-    color: #00c896;
-    font-weight: 500;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.view-project-btn:hover {
-    color: #00e6a8;
-    transform: translateY(-3px);
-}
-
-/* PROJECT MODAL */
-.project-modal {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.8);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-}
-
-.project-modal-box {
-    background: #11151c;
-    padding: 20px;
-    border-radius: 12px;
-    width: 600px;
-    max-width: 90%;
-}
-
-#projectImages img {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 10px;
-}
-
-.project-link-btn {
-    display: inline-block;
-    margin-top: 10px;
-    color: #00c896;
-    font-weight: 600;
-}
-
-.close-project-modal {
-    float: right;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-
 
 
 /* ================= OPTIONS background: rgba(0,0,0,0.5); ================= */
