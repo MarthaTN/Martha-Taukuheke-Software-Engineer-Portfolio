@@ -201,3 +201,21 @@ window.addEventListener("click", (e) => {
         projectModal.style.display = "none";
     }
 });
+
+// =======================
+// ACTIVE SCROLL
+// =======================
+
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-link");
+
+window.onscroll = () => {
+  let current = [...sections].find(section =>
+    window.scrollY >= section.offsetTop - 150 &&
+    window.scrollY < section.offsetTop + section.offsetHeight - 150
+  )?.id;
+
+  navLinks.forEach(link => {
+    link.classList.toggle("active", link.getAttribute("href") === "#" + current);
+  });
+};
