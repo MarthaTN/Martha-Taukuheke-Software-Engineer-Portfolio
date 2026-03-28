@@ -1,6 +1,68 @@
+
 // =======================
-// SELECTION & PREVIEW LOGIC
+// ACTIVE SCROLL
 // =======================
+
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-link");
+
+window.onscroll = () => {
+  let current = [...sections].find(section =>
+    window.scrollY >= section.offsetTop - 150 &&
+    window.scrollY < section.offsetTop + section.offsetHeight - 150
+  )?.id;
+
+  navLinks.forEach(link => {
+    link.classList.toggle("active", link.getAttribute("href") === "#" + current);
+  });
+};
+
+// =========================================
+// PROJECT (Previouse-work)MODAL LOGIC
+// =========================================
+
+const projectButtons = document.querySelectorAll(".view-project-btn");
+const projectModal = document.getElementById("projectModal");
+const projectImages = document.getElementById("projectImages");
+const projectLink = document.getElementById("projectLink");
+const closeProjectModal = document.querySelector(".close-project-modal");
+
+projectButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+
+        projectModal.style.display = "flex";
+
+        // Images
+        const images = btn.dataset.images.split(",");
+        projectImages.innerHTML = "";
+
+        images.forEach(img => {
+            const imageEl = document.createElement("img");
+            imageEl.src = img;
+            projectImages.appendChild(imageEl);
+        });
+
+        // Link
+        projectLink.href = btn.dataset.link;
+    });
+});
+
+closeProjectModal.addEventListener("click", () => {
+    projectModal.style.display = "none";
+});
+
+window.addEventListener("click", (e) => {
+    if(e.target === projectModal){
+        projectModal.style.display = "none";
+    }
+});
+
+
+
+
+// ===================================
+// BOOKING-SELECTION & PREVIEW LOGIC
+// ===================================
 
 const baseOptions = document.querySelectorAll('input[name="base"]');
 const featureOptions = document.querySelectorAll('.feature-item input');
@@ -114,6 +176,8 @@ window.addEventListener("click", (e) => { if(e.target === modal) modal.style.dis
 
 
 
+
+
 // =======================
 // EMAILJS FORM HANDLER (REUSABLE)
 // =======================
@@ -162,60 +226,3 @@ setupEmailForm("contactForm", "contactFeedback");
 setupEmailForm("consultationForm", "consultationFeedback");
 
 
-// =======================
-// PROJECT MODAL LOGIC
-// =======================
-
-const projectButtons = document.querySelectorAll(".view-project-btn");
-const projectModal = document.getElementById("projectModal");
-const projectImages = document.getElementById("projectImages");
-const projectLink = document.getElementById("projectLink");
-const closeProjectModal = document.querySelector(".close-project-modal");
-
-projectButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-
-        projectModal.style.display = "flex";
-
-        // Images
-        const images = btn.dataset.images.split(",");
-        projectImages.innerHTML = "";
-
-        images.forEach(img => {
-            const imageEl = document.createElement("img");
-            imageEl.src = img;
-            projectImages.appendChild(imageEl);
-        });
-
-        // Link
-        projectLink.href = btn.dataset.link;
-    });
-});
-
-closeProjectModal.addEventListener("click", () => {
-    projectModal.style.display = "none";
-});
-
-window.addEventListener("click", (e) => {
-    if(e.target === projectModal){
-        projectModal.style.display = "none";
-    }
-});
-
-// =======================
-// ACTIVE SCROLL
-// =======================
-
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav-link");
-
-window.onscroll = () => {
-  let current = [...sections].find(section =>
-    window.scrollY >= section.offsetTop - 150 &&
-    window.scrollY < section.offsetTop + section.offsetHeight - 150
-  )?.id;
-
-  navLinks.forEach(link => {
-    link.classList.toggle("active", link.getAttribute("href") === "#" + current);
-  });
-};
