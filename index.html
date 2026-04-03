@@ -237,80 +237,64 @@
 
 <div class="row booking-divider g-5" >
 
-
+<!-- LEFT SIDE -->
 <div class="col-lg-7">
-
+<!--P-card1-->
 <h5>Choose Project Type</h5>
 <div class="project-card selection-card">
-
   <div class="card-header">
     <label class="card-select">
       <input type="radio" name="base" value="6000">
       <span class="card-title">Business Website</span>
     </label>
-
     <div class="card-right">
       <span class="price">N$ 6,000</span>
       </div>
-    
   </div>
-
   <div class="option-desc">
     Ideal for companies and organizations that need a strong online presence.
     Includes multiple pages, contact forms and structured content presentation.
   </div>
-
   <div class="accordion-row">
        <span class="accordion-icon">
          <i class="bi bi-chevron-down"></i>
        </span>
     </div>
-
 </div>
 
-
+<!--P-card2-->
 <div class="project-card selection-card">
-
   <div class="card-header">
     <label class="card-select">
       <input type="radio" name="base" value="12000">
       <span class="card-title">Interactive Platform</span>
     </label>
-
     <div class="card-right">
       <span class="price">N$ 12,000</span>
     </div>
-
   </div>
-
   <div class="option-desc">
     Includes user login, account setup, secure database, admin panel
     and content management tools.
   </div>
-
   <div class="accordion-row">
        <span class="accordion-icon">
          <i class="bi bi-chevron-down"></i>
        </span>
     </div>
-
 </div>
 
-
+<!--P-card3-->
 <div class="project-card selection-card">
-
   <div class="card-header">
     <label class="card-select">
       <input type="radio" name="base" value="25000">
       <span class="card-title">Advanced System</span>
     </label>
-
     <div class="card-right">
       <span class="price">N$ 25,000</span>
-    </div>
-    
+    </div>   
   </div>
-
   <div class="option-desc">
     Full system with user accounts, dashboards, approvals,
     workflows, validation logic and scalable architecture.
@@ -324,7 +308,10 @@
 
 </div>
 
+<!--==Enhancement options=== -->
 <h5 class="mt-4">Enhancement Options</h5>
+<div id="featureContainer">
+    
 
 <label class="feature-item selection-card">
     <input type="checkbox" value="2000">
@@ -345,7 +332,13 @@
     <input type="checkbox" value="3500">
     Approval & Workflow System (+ N$ 3,500)
 </label>
+</div>
+<p id="featureHint" style="display:none; color:#00c896;">
+  Advanced system already includes all features.
+</p>
 
+
+<!----====Themes====----->
 <h5 class="mt-4">Choose Visual Style</h5>
 
 <label class="theme-item selection-card">
@@ -370,17 +363,15 @@
 
 </div>
 
-<!-- RIGHT SIDE -->
+<!--======= RIGHT SIDE=======-->
 <div class="col-lg-5">
-
+<!-- PREVIEW THEME -->
 <div id="previewBox" class="preview-box professional-theme">
 
   <div class="preview-header">
       <div class="mock-nav"></div>
   </div>
-
   <div class="preview-body">
-
       <div id="mockLayout" class="mock-layout">
           <div class="mock-sidebar"></div>
           <div class="mock-main">
@@ -388,15 +379,14 @@
               <div class="mock-card"></div>
           </div>
       </div>
-
       <div class="preview-features" id="previewFeatures">
-          <p>Selected features will appear here</p>
+          <p></p>
       </div>
 
   </div>
 
 </div>
-
+<!-- PROJECT-BOOKING SUMMARY -->
 <div class="summary-card">
     <h5>Project Summary</h5>
 
@@ -462,19 +452,14 @@
 <textarea name="consult_message" placeholder="Additional details"></textarea>
 
 <button class="book-btn" type="submit">Send Consultation Request</button>
-
-
-      <div class="form-feedback-box" id="consultationFeedback">
+      
+<div class="form-feedback-box" id="consultationFeedback">
   <span id="consultationFeedbackfor"></span>
 </div>
 
     </form>
-
   </div>
-
 </div>
-
-
 </section>
 
 
@@ -527,6 +512,7 @@
 <script src="script.js"></script>
 </body>
 
+<!--================= FOOTER =====================-->
 <footer class="site-footer">
 
   <div class="container">
@@ -560,9 +546,9 @@
         <p>Email: marthataukuheke@gmail.com</p>
 
         <div class="footer-social">
-          <a href="#"><i class="bi bi-github"></i></a>
-          <a href="#"><i class="bi bi-linkedin"></i></a>
-          <a href="#"><i class="bi bi-twitter-x"></i></a>
+        <a href="https://github.com/MarthaTN"><i class="bi bi-github"></i></a>
+        <a href="https://www.linkedin.com/in/martha-taukuheke-nambahu-73140995/"><i class="bi bi-linkedin"></i></a>
+        <a href="https://twitter.com/taukuheke20481"><i class="bi bi-twitter-x"></i></a>
         </div>
 
       </div>
