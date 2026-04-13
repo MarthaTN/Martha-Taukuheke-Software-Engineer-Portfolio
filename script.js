@@ -93,6 +93,9 @@ document.querySelectorAll(".project-card").forEach(card => {
     });
 });
 
+
+
+ 
 // Theme change
 themeOptions.forEach(option => {
     option.addEventListener("change", function() {
@@ -105,24 +108,70 @@ themeOptions.forEach(option => {
 featureOptions.forEach(option => option.addEventListener("change", calculateTotal));
 baseOptions.forEach(option => option.addEventListener("change", calculateTotal));
 
+
+
 function calculateTotal() {
     let basePrice = 0;
     let featuresPrice = 0;
+
+    // Clear preview
     previewFeatures.innerHTML = "";
 
-    baseOptions.forEach(option => { if(option.checked) basePrice = parseInt(option.value); });
+    // 2. ADVANCED-SYSTEM LOGIC
+    // =====================
+    const isAdvanced = document.querySelector('input[value="25000"]').checked;
+    const hint = document.getElementById("featureHint");
+    const featureContainer = document.getElementById("featureContainer");
+
+    if (isAdvanced) {
+        hint.style.display = "block";
+        featureContainer.classList.add("disabled-features");
+    } else {
+        hint.style.display = "none";
+        featureContainer.classList.remove("disabled-features");
+    }
+
+    // Disable advance feature inputs when ADVANCE-SYSTEM selected
     featureOptions.forEach(option => {
-        if(option.checked) {
-            featuresPrice += parseInt(option.value);
-            let div = document.createElement("div");
-            div.innerText = option.parentElement.innerText;
-            previewFeatures.appendChild(div);
+        option.disabled = isAdvanced;
+    });
+
+    // =====================
+    // 3. BASE PRICE
+    // =====================
+    baseOptions.forEach(option => { 
+        if (option.checked) {
+            basePrice = parseInt(option.value);
         }
     });
 
-    if(previewFeatures.innerHTML === "") previewFeatures.innerHTML = "<p>Selected features will appear here</p>";
+    // =====================
+    // 4. FEATURES PRICE
+    // =====================
+    featureOptions.forEach(option => {
+        if (option.checked) {
+            featuresPrice += parseInt(option.value);
+        }
+    });
 
+// =====================
+    // 5.THEME PREVIEW
+    // =====================
+    const selectedTheme = document.querySelector('input[name="theme"]:checked');
+
+    if (selectedTheme) {
+        let div = document.createElement("div");
+        div.innerText = "Theme Style: " + selectedTheme.parentElement.innerText;
+        previewFeatures.appendChild(div);
+    } else {
+        previewFeatures.innerHTML = "<p>The Selected Theme will appear here</p>";
+    }
+
+    // =====================
+    // 6. TOTAL CALCULATION
+    // =====================
     let total = basePrice + featuresPrice;
+
     basePriceEl.innerText = "N$ " + basePrice.toLocaleString();
     featuresPriceEl.innerText = "N$ " + featuresPrice.toLocaleString();
     totalPriceEl.innerText = "N$ " + total.toLocaleString();
